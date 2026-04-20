@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import '@/app/ui/global.css';
+import { inter } from '@/app/ui/fonts';
+
+export const metadata: Metadata = {
+  title: 'Acme Dashboard',
+  description: 'The official Next.js Learn Dashboard, built with App Router.',
+  metadataBase: new URL('http://localhost:3000'),
+};
 
 export default function RootLayout({
   children,
@@ -7,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
